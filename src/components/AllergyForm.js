@@ -1,5 +1,5 @@
 import React from 'react'
-import "./allergy-form.css"
+import './allergy-form.css'
 
 //TODO: in the real world I would have done validation of dates/inputs
 function AllergyForm(props) {
@@ -12,7 +12,7 @@ function AllergyForm(props) {
                     type="text"
                     value={props.description}
                     onChange={props.handleChange}
-                    id={"description"}
+                    id={'description'}
                     className="text-input"
                 />
                 Observation Date
@@ -35,7 +35,6 @@ function AllergyForm(props) {
             <div id="submit-button-div">
                 <input type="submit" value="Submit" />
             </div>
-            
         </form>
     )
 }
