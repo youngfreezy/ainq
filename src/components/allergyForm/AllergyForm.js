@@ -1,4 +1,4 @@
-import React from './node_modules/react'
+import React from 'react'
 
 //TODO: in the real world I would have done validation of dates/inputs
 function AllergyForm(props) {
