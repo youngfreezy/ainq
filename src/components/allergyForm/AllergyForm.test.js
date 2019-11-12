@@ -7,8 +7,6 @@ import { mount } from 'enzyme';
 it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<AllergyForm />, div);
-
-    
     ReactDOM.unmountComponentAtNode(div);
   });
 
