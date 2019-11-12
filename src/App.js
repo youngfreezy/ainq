@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
-import AllergyGrid from './components/AllergyGrid'
-import AllergyForm from './components/AllergyForm'
+import AllergyGrid from './components/allergyGrid/AllergyGrid'
+import AllergyForm from './components/allergyForm/AllergyForm'
 import uuid from 'uuid'
 import _ from 'lodash'
 
