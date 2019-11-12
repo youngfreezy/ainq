@@ -13,3 +13,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+table { display: table-cell}
+
+tr {
+  border-spacing: 30px 10px
+}

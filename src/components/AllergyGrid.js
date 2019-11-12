@@ -1,48 +1,43 @@
 import React from 'react'
 import _ from 'lodash'
-import "./allergy-grid.css"
+import './allergy-grid.css'
 
 function AllergyGrid(props) {
     return (
         <div>
             <table id="allergic-reactions">
-                <tbody>
-                    {renderTableData(
-                        props.allergicReactions,
-                        props.handleClick,
-                        props.descriptionClicked
-                    )}
-                </tbody>
+                <tbody>{renderTableData(props)}</tbody>
             </table>
         </div>
     )
 }
 
-function renderTablePerReactionDescription(
-    allergicReactions,
-    handleClick,
-    descriptionClicked
-) {
-    return _.map(allergicReactions, (allergy, key) => {
+function renderTablePerReactionDescription(props) {
+    return _.map(props.allergicReactions, (allergy, key, idx) => {
         return (
-            <table id={key}>
+            <table key={allergy[0].id}>
                 <tbody>
                     <tr>
-                        <th onClick={handleClick}>{key}</th>
+                        <th onClick={props.handleClick}>{key}</th>
                     </tr>
-                    {descriptionClicked[key] && (
+                    {props.descriptionClicked[key] && (
                         <tr>
                             <td>date</td>
                             <td>severity</td>
                         </tr>
                     )}
 
-                    {descriptionClicked[key] &&
+                    {props.descriptionClicked[key] &&
                         allergy.map(reactionData => {
                             return (
-                                <tr>
-                                    <td>{reactionData.observationDate}</td>
-                                    <td>{reactionData.severity}</td>
+                                <tr key={reactionData.id}>
+                                    {/* TODO: implement sort by date and sort by severity */}
+                                    <td onClick={props.sortByColumn}>
+                                        {reactionData.observationDate}
+                                    </td>
+                                    <td onClick={props.sortByColumn}>
+                                        {reactionData.severity}
+                                    </td>
                                 </tr>
                             )
                         })}
@@ -52,16 +47,10 @@ function renderTablePerReactionDescription(
     })
 }
 
-function renderTableData(allergicReactions, handleClick, descriptionClicked) {
+function renderTableData(props) {
     return (
         <tr>
-            <td>
-                {renderTablePerReactionDescription(
-                    allergicReactions,
-                    handleClick,
-                    descriptionClicked
-                )}
-            </td>
+            <td>{renderTablePerReactionDescription(props)}</td>
         </tr>
     )
 }

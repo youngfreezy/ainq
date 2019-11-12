@@ -13,7 +13,7 @@ function AllergyForm(props) {
                     value={props.description}
                     onChange={props.handleChange}
                     id={"description"}
-                    class="text-input"
+                    className="text-input"
                 />
                 Observation Date
                 <input
@@ -21,7 +21,7 @@ function AllergyForm(props) {
                     value={props.observationDate}
                     onChange={props.handleChange}
                     id="observationDate"
-                    class="text-input"
+                    className="text-input"
                 />
                 Severity (1-10)
                 <input
@@ -29,7 +29,7 @@ function AllergyForm(props) {
                     value={props.severity}
                     onChange={props.handleChange}
                     id="severity"
-                    class="text-input"
+                    className="text-input"
                 />
             </div>
             <div id="submit-button-div">
